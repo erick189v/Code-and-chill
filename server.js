@@ -4,8 +4,12 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+//const dotenv = require('dotenv')
+require('dotenv').config();
+require('./configs/database')
+
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const zoosRouter = require('./routes/zoo');
 //const zooRouter = require('./routes/')
 
 const app = express();
@@ -21,9 +25,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/zoos', zoosRouter);
 
-// catch 404 and forward to error handler
+// catch 404 and forward to error hand dler
 app.use(function(req, res, next) {
   next(createError(404));
 });

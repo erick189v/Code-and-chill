@@ -10,12 +10,12 @@ const zooSchema = new Schema(
             default: "Select zone"
         },
         species: {
-            type: [String],
+            type: String,
             enum: ['Fish', 'Mammal', 'Arachnid', 'Reptile'],
             default: 'Mammal',
         },
 
     }
 )
-const Zoo = mongoose.module('Zoo',zooSchema)
+const Zoo = mongoose.model('Zoo',zooSchema)
 module.exports = Zoo;

@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<h1>Zoo details</h1>
+<h2>Zoo info</h2>
+
+<form id="new-form" action="/zoos" method="POST">
+<label id="formText">Zone:</label>
+<select name="zone">
+    <option value="Cold">Cold</option>
+    <option value="Safari">Safari</option>
+    <option value="Desert">Desert</option>
+</select>
+<select name="species">
+    <option value="Fish">Fish</option>
+    <option value="Mammal">Mammal</option>
+    <option value="Arachnid">Arachnid</option>
+    <option value="Reptile">Reptile</option>
+</select>
+<input id="submit" type="submit" value="Add species">
+
+</form>
+
+<a href="/zoo<%= zoo._id %>">Create a new species</a>
+
+
+  <%- include('../partials/footer') %>

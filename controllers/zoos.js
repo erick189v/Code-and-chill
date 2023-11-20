@@ -30,7 +30,7 @@ async function newZoo(req, res){
 
 async function index(req,res){
     const allSpecies = await Zoo.find({});
-    res.render("zoo/index",{
+    res.render("zoos/index",{
         zoos: allSpecies,
         title: "All species"
     })
